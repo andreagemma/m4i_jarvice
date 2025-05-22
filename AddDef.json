@@ -1,0 +1,154 @@
+{
+  "name": "andreagemma-ubuntu",
+  "description": "",
+  "author": "",
+  "licensed": false,
+  "appdefversion": 2,
+  "classifications": [
+    "Uncategorized"
+  ],
+  "machines": [
+    "*"
+  ],
+  "vault-types": [
+    "FILE",
+    "BLOCK",
+    "BLOCK_ARRAY",
+    "OBJECT"
+  ],
+  "commands": [
+    {
+      "id": "test",
+      "data": {
+        "path": "/bin/bash",
+        "interactive": false,
+        "name": "Test",
+        "description": "Test Command",
+        "parameters": [
+          {
+            "id": "-p",
+            "data": {
+              "name": "-p",
+              "description": "-p",
+              "type": "UPLOAD",
+              "value": "-p",
+              "required": true,
+              "target": "params.json",
+              "filter": ".json"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "batch",
+      "data": {
+        "path": "/bin/bash",
+        "interactive": false,
+        "name": "Batch",
+        "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
+        "parameters": [
+          {
+            "id": "-l",
+            "data": {
+              "name": "-l",
+              "description": "-l",
+              "type": "CONST",
+              "value": "-l",
+              "positional": true,
+              "required": true
+            }
+          },
+          {
+            "id": "-c",
+            "data": {
+              "name": "-c",
+              "description": "-c",
+              "type": "CONST",
+              "value": "-c",
+              "positional": true,
+              "required": true
+            }
+          },
+          {
+            "id": "command",
+            "data": {
+              "name": "Command",
+              "description": "Command to run",
+              "type": "STR",
+              "positional": true,
+              "required": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "shell",
+      "data": {
+        "path": "/bin/bash -l",
+        "name": "Shell",
+        "webshell": true,
+        "description": "Launch a web shell running /bin/bash and connect directly from your web browser.",
+        "parameters": []
+      }
+    },
+    {
+      "id": "desktop-app",
+      "data": {
+        "path": "/bin/bash",
+        "desktop": true,
+        "name": "Desktop App",
+        "description": "Run a GUI application, and connect interactively directly from your web browser (requires JARVICE Desktop in container image from https://github.com/nimbix/jarvice-desktop ).",
+        "parameters": [
+          {
+            "id": "-l",
+            "data": {
+              "name": "-l",
+              "description": "-l",
+              "type": "CONST",
+              "value": "-l",
+              "positional": true,
+              "required": true
+            }
+          },
+          {
+            "id": "-c",
+            "data": {
+              "name": "-c",
+              "description": "-c",
+              "type": "CONST",
+              "value": "-c",
+              "positional": true,
+              "required": true
+            }
+          },
+          {
+            "id": "command",
+            "data": {
+              "name": "Command",
+              "description": "Command to run",
+              "type": "STR",
+              "positional": true,
+              "required": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "desktop-terminal",
+      "data": {
+        "path": "/usr/bin/x-terminal-emulator",
+        "desktop": true,
+        "name": "Desktop Terminal",
+        "description": "Run a GUI application, and connect interactively directly from your web browser (requires JARVICE Desktop in container image from https://github.com/nimbix/jarvice-desktop ).",
+        "parameters": []
+      }
+    }
+  ],
+  "image": {
+    "type": "image/png",
+    "data": ""
+  }
+}
