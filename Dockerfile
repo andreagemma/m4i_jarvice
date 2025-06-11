@@ -1,5 +1,4 @@
-FROM python:3.12.11-slim-bookworm
-SHELL ["/bin/bash", "-c"]
+FROM python
 
 RUN apt-get update
 RUN apt-get install -y curl
