@@ -9,3 +9,4 @@ RUN apt-get install -y nodejs
 RUN apt-get install -y python3-pip
 RUN apt-get install -y wget
 RUN apt-get clean
+COPY AppDef.json /etc/NAE/AppDef.json
