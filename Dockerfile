@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:3.12.11-slim-bookworm
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update
